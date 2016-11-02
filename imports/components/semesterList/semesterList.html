@@ -10,24 +10,11 @@ folder and identifies three top-level tags:
 
 </header>
 
-<ul>
-  <todos-list></todos-list>
-  <todos-list></todos-list>
-  <todos-list></todos-list>
-</ul
 
-<form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
-  <input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new tasks"/>
-</form>
-
-</header>
 
 <ul>
-  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
-    <button class="delete" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
-    <span class="text">
-    {{task.text}}
-  </span>
+  <li ng-repeat="sem in $ctrl.semester">
+    <todos-list data="{{sem.name}}"></todos-list>
+
   </li>
 </ul>
-<!-- end template for todosList LIST -->
