@@ -3,21 +3,20 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 
+
 import template from './semesterList.html';
 
 
 class semesterListCtrl {
-  constructor($scope) { //function
-    $scope.viewModel(this);
+  constructor() {
     this.semester = [{
-      name: 'sem1'
+      name: 'This is task 1'
     }, {
-      name: 'sem2'
+      name: 'This is task 2'
     }, {
-      name: 'sem3'
+      name: 'This is task 3'
     }];
-
-}
+  }
 }
 
 export default angular.module('semesterList', [
