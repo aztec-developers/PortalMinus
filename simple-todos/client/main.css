@@ -1,0 +1,179 @@
+/* CSS declarations go here */
+<link rel="stylesheet" href="//http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+body {
+    font-family: sans-serif;
+    background-color: #ffb366;
+    background-image: linear-gradient(to bottom, #b3b3b3, #e6e6e6 100%);
+    background-attachment: fixed;
+
+    position: relative;;
+    top: 10;
+    bottom: 0;
+    left: 10;
+    right: 0;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 14px;
+}
+.semesterButton{
+  float: right;
+}
+.container {
+    max-width: 70%;
+    margin: 0px;
+    min-height: 50%;
+    max-height: 70%;
+
+}
+
+header {
+    background: #ff8080;
+    background-image: linear-gradient(to bottom, #b3b3b3 , #e6e6e6 100%);
+    padding: 20px 15px 15px 15px;
+    position: relative;
+}
+
+#login-buttons {
+    display: block;
+}
+
+
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+form {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position: relative;
+}
+
+.new-task input {
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    width: 100%;
+    padding-right: 80px;
+    font-size: 1em;
+}
+
+.new-task input:focus{
+    outline: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.delete {
+    float: right;
+    font-weight: bold;
+    background: none;
+    font-size: 1em;
+    border: none;
+    position: relative;
+}
+
+li {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    border-bottom: #eee solid 1px;
+}
+
+/*li .text {
+    margin-left: 10px;
+}*/
+
+li.checked {
+    color: #888;
+}
+li.dropdown{
+  margin-left: 10px;
+  max-width: 50%;
+  border:0px;
+  outline: 0px;
+  min-height: 50%;
+  max-height: 70%;
+}
+
+
+li.private {
+    background: #eee;
+    border-color: #ddd;
+}
+li.para{
+  font-size: 100%;
+  margin-left: 30px;
+
+}
+
+header .hide-completed {
+    float: right;
+}
+
+.toggle-private {
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    li {
+        padding: 12px 15px;
+    }
+
+    .search {
+        width: 150px;
+        clear: both;
+    }
+
+    .new-task input {
+        padding-bottom: 5px;
+    }
+}
+.addTaskButton{
+  border-radius: 10px;
+  border-spacing: 20px;
+  background-color: #e6e6e6;
+
+}
+.addTaskButton:hover{background-color:#cccccc; }
+/**
+Adding Rectangle Format
+*/
+#addRectangle{
+  border: 10px outset black;
+  height: 200px;
+  width: 100px;
+  background-image: linear-gradient(to bottom  #b3b3b3, #e6e6e6 100% );
+
+}
+#addRectangle {
+
+        width:200px;
+        height:400px;
+
+        left: 50%;
+
+        border-style:solid;
+        border-color:#000000;
+        text-align:center;
+}
+
+.semesterButton {
+   position:relative;
+   top: 50%;
+   transform: translateY(-50%);
+}
+.addSemesterRect: hover{
+  background-color: #e6e6e6;
+}

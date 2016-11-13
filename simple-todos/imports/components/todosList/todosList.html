@@ -1,0 +1,36 @@
+<header>
+<h1>
+  Semester
+    <button type = "Add" class=addTaskButton ng-click="$ctrl.addTask($ctrl.newTask)">
+      Add Task
+    </button>
+
+
+
+
+
+</h1>
+<div class="dropdown">
+
+<form class ="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
+  <!--<input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new task"/>-->
+</form>
+</header>
+
+<ul>
+  <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
+      <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
+
+      <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
+      <select id="dropDown" class = "dropDown" name = "select" >
+        <option value="None">    </option>
+        <option value = "value1">CS237: Machine Assembly </option>
+        <option value = "value2">CS310: Datastructures</option>
+        <option value = "value3">CS320: Programming Languages</option>
+      </select>
+      <p id="dropDownValue" class="para"> </p>
+      <span class="text">
+        {{task.text}}
+      </span>
+    </li>
+</ul>
