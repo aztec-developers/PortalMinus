@@ -1,5 +1,3 @@
-//adds functionality to todosList.html
-
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import { Tasks } from '../../api/tasks.js';
@@ -20,23 +18,58 @@ class TodosListCtrl {
         });
       }
     })
- }
- addTask(newTask) {
+  }
+
+  addTask(newTask) {
     // Insert a task into the collection
+
     Tasks.insert({
       text: newTask,
       createdAt: new Date
     });
 
-    // Clear form
-    this.newTask = '';
+     // Clear form
+     this.newTask = '';
+   }
+
+  setChecked(task) {
+    // Set the checked property to the opposite of its current value
+    Tasks.update(task._id, {
+      $set: {
+        checked: !task.checked
+      },
+    });
+  }
+
+  removeTask(task) {
+    Tasks.remove(task._id);
   }
  }
 
-export default angular.module('todosList', [
+ export default angular.module('todosList', [
   angularMeteor
 ])
   .component('todosList', {
     templateUrl: 'imports/components/todosList/todosList.html',
-    controller: ['$scope', TodosListCtrl] //from class TodosListCtrl
+    controller: ['$scope', TodosListCtrl]
   });
+
+function inputDropDown(){
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+if (!event.target.matches('.dropbtn')) {
+
+var dropdowns = document.getElementsByClassName("dropdown-content");
+var i;
+for (i = 0; i < dropdowns.length; i++) {
+  var openDropdown = dropdowns[i];
+  if (openDropdown.classList.contains('show')) {
+    openDropdown.classList.remove('show');
+  }
+}
+}
+
+}

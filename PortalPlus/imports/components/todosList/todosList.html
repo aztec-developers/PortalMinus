@@ -1,26 +1,44 @@
-<!-- template for todosList LIST -->
-<!-- HTML codes in Meteor define templates
-Meteor parses all of the regular .HTML files in your app
-folder and identifies three top-level tags:
-<head> added to head section
-<body> added to body section
-<template> -->
 <header>
-  <h3>Sem 1</h3>
+<h1>
+  Semester
+    <button type = "Add" class=addTaskButton ng-click="$ctrl.addTask($ctrl.newTask)">
+      Add Task
+    </button>
 
 
-<form class="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
-  <input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new tasks"/>
+
+
+
+</h1>
+<div class="dropdown">
+
+<form class ="new-task" ng-submit="$ctrl.addTask($ctrl.newTask)">
+  <!--<input ng-model="$ctrl.newTask" type="text" name="text" placeholder="Type to add new task"/>-->
 </form>
-
 </header>
 
 <ul>
   <li ng-repeat="task in $ctrl.tasks" ng-class="{'checked': task.checked}">
-    <button class="delete" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
-    <span class="text">
-    {{task.text}}
-  </span>
-  </li>
+      <button class="delete" ng-click="$ctrl.removeTask(task)">&times;</button>
+
+      <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
+      <div class = "inputDropDown">
+        <button ng-click="" class="inputDropDown-button">What Class</button>
+          <div id="inputDropDown" class="inputDropDown-content">
+            <p>CS 320 Programming Languages</p>
+            <p>CS 310 Datastructures</p>
+            <p>CS 237 Machine Assembly</p>
+          </div>
+      </div>
+    <!--  <select id="dropDown" class = "dropDown" name = "select" >
+        <option value="None">    </option>
+        <option value = "value1">CS237: Machine Assembly </option>
+        <option value = "value2">CS310: Datastructures</option>
+        <option value = "value3">CS320: Programming Languages</option>
+      </select>-->
+      <p id="dropDownValue" class="para"> </p>
+      <span class="text">
+        {{task.text}}
+      </span>
+    </li>
 </ul>
-<!-- end template for todosList LIST -->
