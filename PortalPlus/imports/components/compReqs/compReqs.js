@@ -6,15 +6,16 @@ import template from './compReqs.html';
 
 class compReqsCtrl {
   constructor() {
-    this.reqs = [{text:"COMPETENCY REQUIREMENTS"},
-    {text:"GRADUATION WRITING ASSESSMENT REQUIREMENT"},
-    {text:"AMERICAN INSTITUTIONS REQUIREMENT SATISFIED"},
-    {text:"UNIT, RESIDENCE AND GPA REQUIREMENTS"},
-    {text:"CULTURAL DIVERSITY"},
-    {text:"IVA.  EXPLORATIONS - NATURAL SCIENCES"},
-    {text:"IVC.  EXPLORATIONS - HUMANITIES"},
-    {text:"PREPARATION FOR THE MAJOR"},
-    {text:"MAJOR REQUIREMENTS"},
+    this.reqs = [{text:"COMPETENCY REQUIREMENTS",status:"complete"},
+    {text:"GRADUATION WRITING ASSESSMENT REQUIREMENT",status:"incomplete"},
+    {text:"AMERICAN INSTITUTIONS REQUIREMENT SATISFIED",status:"complete"},
+    {text:"UNIT, RESIDENCE AND GPA REQUIREMENTS",status:"incomplete"},
+    {text:"CULTURAL DIVERSITY",status:"incomplete"},
+    {text:"IVA.  EXPLORATIONS - NATURAL SCIENCES",status:"incomplete"},
+    {text:"IVA.  EXPLORATIONS - SOCIAL AND BEHAVIORAL SCIENCES",status:"incomplete"},
+    {text:"IVC.  EXPLORATIONS - HUMANITIES",status:"incomplete"},
+    {text:"PREPARATION FOR THE MAJOR",status:"complete"},
+    {text:"MAJOR REQUIREMENTS",status:"complete"},
     ];
   }
 }
