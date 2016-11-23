@@ -21,11 +21,6 @@ class compReqsCtrl {
 }
 
 
-
-
-
-
-
 export default angular.module('compReqs', [
   angularMeteor
 ])

@@ -11,31 +11,28 @@
           </div>
         </div> <!-- End Progress Bar -->
 
-        <!-- It appears that the only difference between the two situations (complete/incomplete)
-            exists inside the <div class="panel-body"> inside the expanding div.
-
-            We also need to take care of the check mark created by the span.
-
-            Lets exploit that by using an ng-if statement to create one or the other based
-            on some data that comes out of the request.
-            -->
+        <!-- foreach requirement from the requirements in the controller -->
           <div class="panel panel-default" ng-repeat="req in $ctrl.reqs">
+            <!-- Produce the initially visible part with the requirement text -->
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
-              <!-- simple if / else condition for the glyph as well-->
+                <!-- if / else for the complete/incomlete -->
               <span ng-if="req.status == 'complete'" class="glyphicon glyphicon-check text-success" title="Delete Class"></span>
+              <!-- else -->
               <span ng-if="req.status == 'incomplete'" class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span>
+              <!-- endif -->
               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
                 {{req.text}}
               </a>
               </h4>
             </div>
+            <!-- Produce the hidden part that will expando out when clicked. -->
             <div id="collapse-{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-              <!-- simple if / else condition -->
+              <!-- if / else for the complete/incomlete -->
               <div ng-if="req.status == 'complete'" class="panel-body">
                 <span class="glyphicon glyphicon-check text-success" title="Delete Class"></span> You have completed this requirement.
               </div>
-              <!-- ng-if works by displaying the entire div if the condition is true. Otherwise nothing is added -->
+              <!-- else case -->
               <div ng-if="req.status == 'incomplete'"  class="panel-body">
                 <span class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span> You have not completed this requirement. Please add a class from the list below.
                 <div class="input-group" style="padding-top: 10px;">
@@ -45,35 +42,10 @@
                   </span>
                 </div>
               </div>
+              <!-- endif -->
             </div>
           </div>
-
-      <!-- This is the complete version. This is the version we are replicating in this version.
-        <span class="glyphicon glyphicon-check text-success" title="Delete Class"></span>
-
-
-        <div class="panel-body">
-            <span class="glyphicon glyphicon-check text-success" title="Delete Class"></span> You have completed this requirement.
-        </div>
-      -->
-      <!-- The only difference is the inner part!!! and the span! -->
-    <!-- This is the incomplete version
-          <span class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span>
-
-
-          <div class="panel-body">
-            <span class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span> You have not completed this requirement. Please add a class from the list below.
-            <div class="input-group" style="padding-top: 10px;">
-              <input type="text" class="form-control" placeholder="Search & Add a Class" aria-describedby="sizing-addon1">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">+</button>
-              </span>
-            </div>
-          </div>
-    -->
-
-
-
+          <!-- end foreach -->
 
     </div> <!-- End panel group -->
 
