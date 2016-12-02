@@ -73,10 +73,6 @@ nav ul a li:hover {
 	background-color: #f9f9f9;
 }
 
-.pane:hover {
-	border-color: #b30000;
-}
-
 .pane .title {
 	text-align: left;
 	padding-left: 10px;
@@ -89,8 +85,15 @@ nav ul a li:hover {
 	padding: 5px 8px;
 }
 
-.pane-item p {
+.pane-item {
 	color: #777;
+}
+
+.adding:hover {
+	background-color: #b30000;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	color: #fff !important;
 }
 
 .gray-bot-border {
