@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Software UI</title>
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+
+  <script type="text/javascript" src="NimishUI\js\main.js"></script>
+</head>
+<body>
+  <ul class = "topNavBar">
+    <li><a href="https://blackboard.sdsu.edu/">Blackboard</a></li>
+    <li><a href="#">Aid Link</a></li>
+    <li><a href= "http://sdsu.edu/">SDSU Home</a></li>
+    <li><a href="https://sunspot.sdsu.edu/pls/webapp/!personal_map.main?sess_id=1861241500|8838118&menu=U">MyMap</a></li>
+    <li><a href="https://sunspot.sdsu.edu/pls/webapp/web_menu.login/">SDSU Webportal Main Homepage</a></li>
+  </ul>
+  <header class="headerFont">
+    <div>  <img src="sdsuLogo.png"></img>
+    <h1>Software UI</h1>
+    <div id="progress">
+      <div id="progressBar">
+      <div id="progressText">0%</div>
+    </div>
+  </div>
+
+  </div>
+  </header>
+  <section>
+    <h2>Semesters</h2>
+    <div class="leftTable">
+      <table id="LeftTable">
+        <tr>
+          <td>
+            <div class="container" id="SpringSemesterTemplate">
+              <div class = "panel" id="springPanel">
+                <div class = "title">
+                  <h3>Spring Semester <p id="year"></p></h3>
+                </div>
+                <div class = "panel-item"  >
+                  <p class="dragP">CS 310 Datastructures</p>
+                  <!--<button class="close">x</button>-->
+                </div>
+                <div class = "panel-item"  >
+                  <p class="dragP">CS 320 Programming Languages</p>
+                  <!--<button class="close">x</button>-->
+                </div>
+                <div class = "panel-item"  >
+                  <p class="dragP">MATH 254 Linear ALgebra</p>
+                  <!--<button class="close">x</button>-->
+                </div>
+                <div class = "panel-item"  >
+                  <p class="dragP">Poli-Sci 101 Intro to Political Science</p>
+                  <!--<button class="close">x</button>-->
+                </div>
+                <div class = "panel-item"  >
+                  <p class="dragP">TFM 100 Intro to Theater</p>
+                  <!--<button class="close">x</button>-->
+                </div>
+                <button class = "panel-item"  id="addClassButton" onclick="addSpringClasses()">
+
+                    <p>Click to Add A Class..</p>
+
+                </button>
+              </td>
+              <td>
+                <div class="container" id="FallSemesterTemplate">
+                  <div class = "panel">
+                    <div class = "title">
+                      <h3>Fall Semester <p></p></h3>
+                    </div>
+                    <div class = "panel-item" id = "panelItem"  >
+                      <p class="dragP" id="pID">CS 237 Machine Assembly</p>
+                      <!--<button class="close">x</button>-->
+                    </div>
+                    <div class = "panel-item"  >
+                      <p class="dragP">CS 370 Computer Architecture</p>
+                      <!--<button class="close">x</button>-->
+                    </div>
+                    <div class = "panel-item"  >
+                      <p class="dragP">MATH 245 Discrete Mathematics</p>
+                      <!--<button class="close">x</button>-->
+                    </div>
+                    <div class = "panel-item"  >
+                      <p class="dragP">Poli-Sci 101 Intro to Political Science</p>
+                      <!--<button class="close">x</button>-->
+                    </div>
+                    <div class = "panel-item"  >
+                      <p class="dragP">TFM 100 Intro to Theater</p>
+                      <!--<button class="close">x</button>-->
+                    </div>
+                    <button class = "panel-item" id="addClassButton" onclick="addClasses()">
+
+                        <p>Click to Add A Class..</p>
+
+                    </button>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr id="tr2">
+              <td id="td0">
+                <div class="container" id="parentContainer">
+
+                  <button class = "smallContainer" id="springChildContainer" onclick="addSemesterSpring()">
+                    <p>Add New Semester</p>
+                  </button>
+
+              </div>
+            </td>
+            <td id="td1">
+              <div class="container" id="parentContainer">
+
+                <button class = "smallContainer" id="fallChildContainer" onclick="addSemesterFall()" >
+                  <p>Add New Semester</p>
+                </button>
+
+            </div>
+          </td>
+          </tr>
+        </table>
+      </div>
+      <div class="rightTable" id="rightTable">
+        <h2>Classes</h2>
+        <input type="text" id="myInput" name="Filter" onkeyup="filterFunction()" placeholder="Filter Classes...."></input>
+        <ul id="mainUL">
+        <button class="accordion">Required Computer Science Classes</button>
+        <div class="classPanel">
+          <button class="accordion2">Lower Division Courses</button>
+          <div class="classPanel">
+            <!-- <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer</div> -->
+            <ul>
+              <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer</div>
+             <div class="dragLi"  id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer Science 108-Intermediate Computer Science</div>
+             <div class="dragLi"   id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer Science 237-Machine Assembly</div>
+            </ul>
+          </div>
+          <button class="accordion2">Upper Division Courses</button>
+          <div class="classPanel">
+            <ul>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer Science 310-DataStructures</div>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer Science 320-Programming Languages</div>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Computer Science 370-Computer Architecture</div>
+            </ul>
+          </div>
+        </div>
+        <button class="accordion">Required Math Classes</button>
+        <div class="classPanel">
+          <button class="accordion2">Lower Division Courses</button>
+          <div class="classPanel">
+            <ul>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Math 150-Calculus I</div>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Math 151-Calculus II</div>
+             <div class="dragLi"   id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Math 245-Discrete Mathematics</div>
+             <div class="dragLi"   id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Math 254-Linear Algebra</div>
+            </ul>
+          </div>
+          <button class="accordion2">Statistics Courses</button>
+          <div class="classPanel">
+            <ul>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Statistics 250</div>
+             <div class="dragLi"   id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Statistics 350</div>
+             <div class="dragLi"    id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">Statistics 550-Probability</div>
+
+            </ul>
+          </div>
+        </div>
+      </ul>
+      </div>
+
+    </section>
+  </body>
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+      this.classList.toggle("active");
+      this.nextElementSibling.classList.toggle("show");
+    }
+  };
+  var acc2 = document.getElementsByClassName("accordion2");
+  var j;
+
+  for (j = 0; j < acc.length; j++) {
+    acc2[j].onclick = function(){
+      this.classList.toggle("active");
+      this.nextElementSibling.classList.toggle("show");
+    }
+  };
+  </script>
+  </html>

@@ -1,0 +1,289 @@
+.topNavBar{
+  list-style-type: none;
+  margin: 0;
+  padding: 14px ;
+  overflow: hidden;
+  background-color: #bfa8ad;
+  min-height: 20%;
+}
+li{
+  float: left;
+  border-right:1px solid #bbb;
+}
+li:hover{
+  color: black;
+}
+li a{
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+}
+li a:hover{
+  color: blue;
+
+}
+#progress{
+  position: relative;
+  width: 50%;
+  height: 20px;
+  background-color: #ddd;
+  float:right;
+  margin-top: 40px;
+}
+#progressBar{
+  position: absolute;
+  width: 0%;
+  background-color: #cc0000;
+}
+#progressText{
+  text-align: center;
+  line-height: 20px;
+  color: white;
+}
+/* Header */
+header div h1{
+  font-family: cursive;;
+  font-weight: bold;
+  text-align: center;
+  display:inline;
+  position:absolute;
+  margin-left: 17%;
+}
+header div img{
+  width: 300px;
+  height: 175px;
+}
+h2{
+  font-family: cursive;
+  font-weight: bold;
+  text-align:left;
+}
+/*The Semester panel*/
+.container{
+  margin: 20px;
+  padding: 10px 20px;
+  width: 80%;
+}
+.smallContainer{
+  margin:5px;
+  padding:5px 5px;
+  width:100%;
+  border: 2px solid #777;
+  cursor:pointer;
+  background-color: #f2f2f2;
+}
+.smallContainer:hover{
+  background-color: #d9d9d9;
+}
+.smallContainer p{
+  font-size: 24px;
+  text-align: center;
+  font-family: cursive;
+  color: #b50c3c;
+  font-weight: bold;
+}
+.smallContainer p:hover{
+  font-size: 26px;
+  color: #4a55ce;
+}
+.panel{
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+}
+.panel .title{
+  text-align: center;
+  word-wrap: normal;
+  color: #777;
+  border-bottom: 3px solid #ddd;
+}
+.panel-item{
+  text-align: left;
+  padding-left: 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #ddd;
+  margin:auto;
+  margin-bottom: 10px;
+  position:relative;
+
+}
+.panel-item p{
+    color: #777;
+}
+.close{
+position: absolute;
+background-color: inherit;
+right:inherit;
+padding-bottom: 10px;
+
+}
+#addClassButton{
+  width:100%;
+  background-color: #f2f2f2;
+  cursor:pointer;
+  border:1px solid #ddd;
+}
+#addClassButton p{
+  color: #b50c3c;
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: cursive;
+  text-decoration: none;
+}
+#addClassButton p:hover{
+  font-size: 20px;
+  color: #4a55ce;
+}
+.addButtonLink p{
+  color: #b50c3c;
+  text-align: center;
+  padding-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: cursive;
+  text-decoration: none;
+}
+.addButtonLink p:hover{
+  font-size: 20px;
+  color: #4a55ce;
+}
+.leftTable{
+  border-right: 2px solid #ddd;
+  width: 70%;
+  float: left;
+}
+/*Right Table*/
+section{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 10px;
+  position: absolute;
+}
+.rightTable{
+  border-left: 2px solid #ddd;
+  margin-left: 70.5%;
+  padding-right: 10px;
+}
+.rightTable h2{
+  text-align: center;
+
+}
+/*#rightTable{
+  display: none;
+}*/
+input{
+  width: 100%;
+
+}
+.ul{
+  margin:auto;
+  padding:0;
+}
+.ul li{
+  cursor:pointer;
+  position:relative;
+  padding:12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  font-family: serif;
+  text-decoration: none;
+}
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796";
+}
+button.accordion2 {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion2.active, button.accordion2:hover {
+    background-color: #ddd;
+}
+
+button.accordion2:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #999;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion2.active:after {
+    content: "\2796";
+}
+
+
+div.classPanel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+}
+
+div.classPanel.show {
+    opacity: 1;
+    max-height: 500px;
+}
+div.classPanel ul{
+  width:100%;
+}
+div.classPanel ul div{
+  position: relative;
+  padding: 0px 0px 0px -500 px;
+  width: 100%;
+  border-bottom: 2px solid #ddd;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style-type: none;
+
+   /* make the list items unselectable */
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+
+}
+#draggable{
+  text-align: left;
+  cursor:move;
+
+}
+

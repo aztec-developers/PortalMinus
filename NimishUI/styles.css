@@ -1,0 +1,105 @@
+body {
+	margin: auto;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+header {
+	position: fixed;
+	top: -16px;
+	width: 100%;
+	clear: both;
+}
+
+nav {
+	width: 100%;
+	background-color: #333;
+}
+
+footer nav ul a li {
+	padding: 10px;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul a li {
+	padding: 30px 15px;
+	display: inline-block;
+}
+
+nav ul a li {
+	text-decoration: none;
+	color: #ccc;
+}
+
+nav ul a li:hover {
+	color: #b30000;
+}
+
+.active {
+	color: #fff;
+	background-color: #111;
+}
+
+.row {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	clear: both;
+}
+
+.top-row-margin {
+	margin-top: 60px !important;
+}
+
+.container {
+	margin: 20px;
+	padding: 10px 20px;
+	width: 88%;
+	float: left;
+}
+
+.pane {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #f9f9f9;
+}
+
+.pane:hover {
+	border-color: #b30000;
+}
+
+.pane .title {
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+	color: #777;
+}
+
+.pane-item {
+	margin: auto;
+	padding: 5px 8px;
+}
+
+.pane-item p {
+	color: #777;
+}
+
+.gray-bot-border {
+	border-bottom: 1px solid #ddd !important;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.container {
+		width: 25%;
+	}
+}
