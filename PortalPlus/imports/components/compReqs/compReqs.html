@@ -1,0 +1,42 @@
+<div class="col-md-6">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <!-- Progress Bar -->
+    <div class="progress no-margin">
+      <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 77.5%; min-width: 2em;">
+        77.5% Units Completed Out of 120
+      </div>
+    </div>
+    <!-- End progress-bar -->
+    <div class="panel panel-default" ng-repeat="req in $ctrl.reqs">
+      <div class="panel-heading" role="tab" id="heading{{$index}}">
+        <h4 class="panel-title">
+            <span ng-if="req.status == 'complete'" class="glyphicon glyphicon-check text-success" title="Delete Class"></span>
+            <span ng-if="req.status == 'incomplete'" class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span>
+
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
+                {{req.text}}
+              </a>
+          </h4>
+      </div>
+      <!-- End panel-heading -->
+      <div id="collapse-{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{$index}}">
+        <div ng-if="req.status == 'complete'" class="panel-body">
+          <span class="glyphicon glyphicon-check text-success" title="Delete Class"></span> You have completed this requirement.
+        </div>
+        <div ng-if="req.status == 'incomplete'" class="panel-body">
+          <span class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span> You have not completed this requirement. Please add a class from the list below.
+          <div class="input-group" style="padding-top: 10px;">
+            <input type="text" class="form-control" placeholder="Search & Add a Class" aria-describedby="sizing-addon1">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">+</button>
+              </span>
+          </div>
+        </div>
+      </div>
+      <!-- End collapse -->
+    </div>
+    <!-- End panel -->
+  </div>
+  <!-- End panel-group -->
+</div>
+<!-- End col -->
