@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #B02F2F;
+        }
+
+        ul.topnav li {
+            float: left;
+        }
+
+        ul.topnav li a {
+            display: inline-block;
+            color: #F09D33;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        ul.topnav li a:hover {
+            background-color: #555;
+        }
+
+        ul.topnav li.icon {
+            display: none;
+        }
+
+        @media screen and (max-width:680px) {
+            ul.topnav li:not(:first-child) {
+                display: none;
+            }
+            ul.topnav li.icon {
+                float: right;
+                display: inline-block;
+            }
+        }
+
+        @media screen and (max-width:680px) {
+            ul.topnav.responsive {
+                position: relative;
+            }
+            ul.topnav.responsive li.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            ul.topnav.responsive li {
+                float: none;
+                display: inline;
+            }
+            ul.topnav.responsive li a {
+                display: block;
+                text-align: left;
+            }
+        }
+
+        button.accordion {
+            background-color: #5D5757;
+            color: #FFF;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+
+        button.accordion.active,
+        button.accordion:hover {
+            background-color: #ddd;
+        }
+
+        div.panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.6s ease-in-out;
+            opacity: 0;
+        }
+
+        div.panel.show {
+            opacity: 1;
+            max-height: 500px;
+        }
+
+        button.accordion:after {
+            content: '\02795';
+            font-size: 13px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+
+        buttton.accordion.active:after {
+            content: "\2796";
+        }
+
+        .floating-box {
+            float: center;
+            width: 350px;
+            height: 175px;
+            margin: 10px;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-fixed navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#"><img alt="Brand" src="media/sdsu_logo.png" alt="messed up" height="50px" width="250px"></a>
+                <style>
+                  .navbar-brand{
+                    vertical-align: middle;
+                    padding: 1px;
+                  }
+                </style>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="topnav" id="myNavbar">
+                    <li><a href="https://sunspot.sdsu.edu/pls/webapp/web_menu.login/" title="Webportal">WebPortal</a></li>
+                    <li><a href="https://blackboard.sdsu.edu/" title="BlackBoard">BlackBoard</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">Some</a></li>
+                    <li><a href="#about">Thing</a></li>
+                    <li class="icon"></li><a href="javascript:void(0);" onclick="myFunction()">&#9776;</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-left">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+                <!-- According for DE -->
+                <button class="accordion">DEGREE EVALUATION: </button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">COMPETENCY REQUIREMENTS: </button>
+                <div class="panel">
+                    <p> go fuck yourself</p>
+                </div>
+                <button class="accordion">GRADUATION WRITING ASSESSMENT REQUIREMENT</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">AMERICAN INSTITUTIONS REQUIREMENT SATISFIED</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">UNIT, RESIDENCE AND GPA REQUIREMENTS</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">CULTURAL DIVERSITY</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">IVA.  EXPLORATIONS - NATURAL SCIENCES</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">IVB.  EXPLORATIONS - SOCIAL AND BEHAVIORAL SCIENCES</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">IVC.  EXPLORATIONS - HUMANITIES</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">PREPARATION FOR THE MAJOR</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <button class="accordion">MAJOR REQUIREMENTS</button>
+                <div class="panel">
+                    <p>Add a class</p>
+                </div>
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+
+                    for (i = 0; i < acc.length; i++) {
+                        acc[i].onclick = function() {
+                            this.classList.toggle("active");
+                            this.nextElementSibling.classList.toggle("show");
+                        }
+                    }
+                </script>
+            </div>
+
+
+            <!-- Middle Content -->
+            <div class="col-sm-5 text-left">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 40%;">
+                        40% Complete (success)
+                    </div>
+                </div>
+                <input type="button" value="Add a semester" onclick="createBlock()" />
+                <p><br /> <br /></p>
+                <script>
+                    function createBlock() {
+                        var body = document.body,
+                            tbl = document.createElement('table');
+                        tbl.style.width = '350px';
+                        tbl.style.height = '175px';
+                        tbl.style.border = '5px solid black';
+
+                        for (var i = 0; i < 1; i++) {
+                            var tr = tbl.insertRow();
+                            var td = tr.insertCell();
+                            td.appendChild(document.createTextNode('Semester'));
+                        }
+                        body.appendChild(tbl);
+                    }
+                    createBlock();
+                </script>
+
+                <div class="panel-heading">
+                    <h1 class="panel-title">Summer 2016</h1>
+                </div>
+                <table class="table table-hover">
+                    <tr>
+                        <th>Units | Class Name</th>
+                        <th>Class Number</th>
+                        <th>Teacher</th>
+                    </tr>
+                    <tr>
+                        <td><span class="badge pull-left">3</span>&nbsp; Data Structures</td>
+                        <td>CS-310</td>
+                        <td>Edwards <span class="glyphicon glyphicon-remove text-danger pull-right" style="padding-top: 2px; !important;" title="Delete Class"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge pull-left">3</span>&nbsp; Ethics in Computing</td>
+                        <td>CS-440</td>
+                        <td>Price <span class="glyphicon glyphicon-remove text-danger pull-right" style="padding-top: 2px; !important;" title="Delete Class"></span></td>
+                    </tr>
+                </table>
+
+                <!-- Makes a new Table Row With the info selected -->
+                <div class="alert alert-success">
+                    <strong>Added!</strong> {{ class }} was added to your {{ semester }} schedule.
+                </div>
+                    <!-- Small modal -->
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+				              Add Class
+				            </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						                          <span aria-hidden="true">&times;</span>
+						                        </button>
+                                    <h4 class="modal-title" id="myModalLabel">Choose a class to add</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <select id="mySelect" size="15">
+                                    <option>CS-310: Data Structures</option>
+                                    <option>CS-320: Programming Languages</option>
+                                    <option>CS-370: Computer Architecture</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                    <option>CS-440: Ethics</option>
+                                  </select>
+                                </div>
+                                <div class="modal-footer">
+                                  <input type="text" class="form-control" placeholder="Search & Add a Class" aria-describedby="sizing-addon1">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Input -->
+            </div>
+            <!-- End Panel -->
+
+        </div>
+        <!-- End Col -->
+        <!--
+        <button class="accordion">Fall 2016</button>
+        <div class="panel">
+            <p>Add a class</p>
+        </div>
+        <button class="accordion">Spring 2016</button>
+        <div class="panel">
+            <p>Add a class</p>
+        </div>
+        <button class="accordion">Fall 2015</button>
+        <div class="panel">
+            <p>Add a class</p>
+        </div>
+        -->
+    </div>
+
+    <div class="col-sm-1 text-left">
+        <p>Units: 96<br /></p>
+        <p>GPA: 3.6 <br /></p>
+        <p>Major GPA: 3.8<br /></p>
+    </div>
+    </div>
+<!--
+    <footer class="container-fluid text-center">
+        <div id="myDIV" class="header">
+            <h4>Future Things ToDo</h4>
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+        <ul id="myUL">
+            <li>Get an Internship!</li>
+            <li>Join a Club</li>
+            <li>CS-560</li>
+            <li>Cultural Diversity</li>
+        </ul>
+    </footer>
+  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+</body>
+
+</html>
