@@ -1,0 +1,185 @@
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SDSU | PortalPlus</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div ng-app="portal-plus">
+    <nav class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- replace img src="media/sdsu_logo.png" when going live -->
+          <a class="navbar-brand" href="#"><img src="media/sdsu_logo.png"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Map Your Way<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Join The Project</a></li>
+                <!-- <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li> -->
+              </ul>
+            </li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+
+    </nav>
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 77.5%" style="min-width: 2em;">
+              77.5% Units Completed Out of 120
+            </div>
+          </div>
+        </div> <!-- End Col -->
+      </div> <!-- End Row -->
+
+
+
+
+       <input type="button" id="hai" value="Add Semester"/>
+
+
+      <div class="row">
+      <div id="suh">
+        <!-- This is where the compReqs should go -->
+        <comp-reqs></comp-reqs>
+
+      </div>
+
+
+
+
+      </div> <!-- End Row -->
+
+    </div> <!-- End Container -->
+
+        <div class="Panel-header">
+          <h3>Fall 2017</h3>
+        </div>
+        <table id="classes" class="table table-hover">
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Data Structures</td>
+            <td>CS-310</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Ethics</td>
+            <td>CS-440</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Programming</td>
+            <td>CS-320</td>
+            <td>Teacher</td>
+          </tr>
+        </table>
+      </div>
+
+
+        <div class="Panel-header">
+          <h3>Spring 2017</h3>
+        </div>
+        <table id="classes" class="table table-hover">
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Data Structures</td>
+            <td>CS-310</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Ethics</td>
+            <td>CS-440</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Programming</td>
+            <td>CS-320</td>
+            <td>Teacher</td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div class="Panel-header">
+          <h3>Fall 2016</h3>
+        </div>
+        <table id="classes" class="table table-hover">
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Data Structures</td>
+            <td>CS-310</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Ethics</td>
+            <td>CS-440</td>
+            <td>Teacher</td>
+          </tr>
+          <tr>
+            <td><span class="badge pull-left">3</span>&nbsp; Programming</td>
+            <td>CS-320</td>
+            <td>Teacher</td>
+          </tr>
+        </table>
+      </div>
+
+
+
+   
+
+     
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+       <script>
+        
+
+
+        $(document).ready(function(){
+            $("#hai").click(function(){
+               $("#suh").slideToggle("slow");
+               $("#hai").text("Nevermind");
+              });
+          });
+       </script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   </div>
+  </body>

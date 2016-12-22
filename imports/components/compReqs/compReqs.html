@@ -1,0 +1,75 @@
+
+<div class="col-md-12">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+      
+
+        <!-- foreach requirement from the requirements in the controller -->
+          <div ng-if="req.status == 'incomplete'" class="panel panel-default" ng-repeat="req in $ctrl.reqs">
+            <!-- Produce the initially visible part with the requirement text -->
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <!-- if / else for the complete/incomlete -->
+
+              
+              <!-- else -->
+              <span ng-if="req.status == 'incomplete'" class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span>
+              <!-- endif -->
+              <a ng-if="req.status == 'incomplete'" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{$index}}" aria-expanded="false" aria-controls="collapse-{{$index}}">
+                {{req.text}}
+              </a>
+              </h4>
+            </div>
+            <!-- Produce the hidden part that will expando out when clicked. -->
+            <div id="collapse-{{$index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <!-- if / else for the complete/incomlete -->
+              <div ng-if="req.status == 'complete'" class="panel-body" id="done">
+                <span class="glyphicon glyphicon-check text-success" title="Delete Class"></span> You have completed this requirement.
+              </div>
+              <!-- else case -->
+              <div ng-if="req.status == 'incomplete'"  class="panel-body">
+                <span class="glyphicon glyphicon-remove text-danger" title="Delete Class"></span> You have not completed this requirement. Please add a class from the list below.
+                <table id="classes" class="table table-hover">
+                   <tr ng-click="$ctrl.addClass(this)" ng-repeat="class in $ctrl.classes">
+                     <td>{{class.name}}</td>
+                     <td>{{class.abr}}</td>
+                     <td>{{class.teacher}}</td>
+                   </tr>
+                 </table>
+              </div>
+              <!-- endif -->
+            </div>
+          </div>
+          <!-- end foreach -->
+
+    </div> <!-- End panel group -->
+
+
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <form class="new-sem" ng-submit="">
+              <input ng-model="$ctrl.newSem" type="text" name="text" placeholder="Semester To Add"/>
+              </form>
+            </div>
+            <!-- <div class="panel-body">
+            </div> -->
+            <table id="newSem" class="table table-hover">
+              <tr>
+                <th>Units | Class Name</th>
+                <th>Class Number</th>
+                <th>Teacher</th>
+              </tr>
+              <tr ng-model="$ctrl.selectedClass" ng-click="$ctrl.returnClass(this)" ng-repeat="nclass in $ctrl.nclasses">
+                <td>{{nclass.name}}</td>
+                <td>{{nclass.abr}}</td>
+                <td>{{nclass.teacher}}</td>
+              </tr>
+            </table>
+            
+            
+          </div> <!-- End Panel -->
+
+        </div> <!-- End Col -->
+
+</div> <!-- End col -->
