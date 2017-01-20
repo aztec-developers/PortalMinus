@@ -1,2 +1,0 @@
-# PortalPlus
-Web Portal Project
