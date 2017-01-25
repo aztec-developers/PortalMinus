@@ -1,0 +1,33 @@
+<!--
+  To get your html to work you have to add this code to a (componentname).component.ts file
+
+  import template from './sem-list.component.html'; // in the imports section of that file
+
+  template // under the @Compnent section **use commas to seperate parts**
+-->
+
+<div id="sem" class="col-6">
+<div class="card">
+  <div class="card-header">
+    Semester
+  </div>
+  <div class="card-block">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Class Name</th>
+          <th>Teacher</th>
+          <th>Class Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let thing of things | async" >
+          <td>{{thing.name}}</td>
+          <td>{{thing.teacher}}</td>
+          <td>{{thing.location}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

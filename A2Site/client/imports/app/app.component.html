@@ -1,0 +1,17 @@
+<login-buttons></login-buttons>
+<req-list></req-list>
+<sem-list></sem-list>
+
+<!--<div>
+  <router-outlet></router-outlet>
+</div> -->
+
+<div>
+  <ul>
+    <li *ngFor="let thing of things | async">
+      {{thing.name}}
+      <p>{{thing.description}}</p>
+      <p>{{thing.location}}</p>
+    </li>
+  </ul>
+</div>

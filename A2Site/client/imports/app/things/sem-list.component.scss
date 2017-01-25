@@ -1,0 +1,12 @@
+/*
+  To get the SCSS to work in Angular/Meteor you must go to your
+  (componentname).component.ts file and import it with this code:
+
+  import style from './(componentname).component.scss'; // in the imports section
+
+  styles: [style] // under the @Component section **use commas to seperate parts**
+*/
+
+#sem {
+  padding-top: 30px;
+}
