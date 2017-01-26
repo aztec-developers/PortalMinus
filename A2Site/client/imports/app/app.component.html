@@ -1,6 +1,61 @@
-<login-buttons></login-buttons>
-<req-list></req-list>
-<sem-list></sem-list>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <login-buttons class="text-right"></login-buttons>
+  </div>
+</nav>
+
+
+<div class="container-fluid text-left">
+  <div class="row content">
+    <div class="col-2">
+      <div class="sidenav">
+
+      <!-- show is a variable saying what will show depending on what number is clicked
+      each button has a number assigned to it and each button is assigned to a component -->
+
+        <nav class="nav flex-column">
+          <button type="button" class="btn btn-secondary" (click)="show = 1">Degree Evaluation </button>
+          <button type="button" class="btn btn-secondary" (click)="show = 2">MyMap</button>
+          <button type="button" class="btn btn-secondary" (click)="show = 3">Major Classes</button>
+          <button type="button" class="btn btn-secondary" (click)="show = 4">SDSU Catalog</button>
+        </nav>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="show == 1">
+    <req-list></req-list>
+  </div>
+  <div *ngIf="show == 2">
+    <sem-list><sem-list>
+  </div>
+  <div *ngIf="show == 3">
+
+  </div>
+  <div *ngIf="show == 4">
+
+  </div>
+</div>
+
+
 
 <!--<div>
   <router-outlet></router-outlet>

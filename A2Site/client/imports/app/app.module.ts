@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {THINGS_DECLARATIONS} from './things';
 import {AccountsModule} from 'angular2-meteor-accounts-ui';
-import {RouterModule} from '@angular/router';
+//import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import {RouterModule} from '@angular/router';
   ],
     declarations: [
       AppComponent,
-      ...THINGS_DECLARATIONS
+      ...THINGS_DECLARATIONS,
   ],
     bootstrap: [
       AppComponent

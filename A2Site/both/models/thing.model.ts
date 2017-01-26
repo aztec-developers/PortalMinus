@@ -2,6 +2,6 @@ export interface Thing {
   name: string;
   teacher: string;
   location: string;
-  semester: int;
+  //semester: int;
   //owner?: string;
 }
