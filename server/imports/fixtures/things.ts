@@ -1,6 +1,10 @@
 import {Things} from '../../../both/collections/things.collection';
 import {Thing} from '../../../both/models/thing.model';
 
+
+// if meteor mongo is not on or a mongodb is not hooked up these classes
+// will show up
+
 export function loadThings() {
   if (Things.find().cursor.count() === 0) {
     const things: Thing[] = [{
