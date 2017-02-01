@@ -1,5 +1,5 @@
 import { MongoObservable } from 'meteor-rxjs';
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from '../meteor/meteor';
 
 import {Req} from '../models/req.model';
 
