@@ -1,2 +1,7 @@
-local
 node_modules/
+.meteor/local
+npm-debug.log
+typings
+.idea
+build
+dist
